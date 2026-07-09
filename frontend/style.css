@@ -18,20 +18,50 @@ main {
   padding: 0 20px;
 }
 
-article {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-}
-
 h1,
 h2,
 h3 {
   margin-top: 0;
 }
 
-span {
-  color: #777;
+.post-card {
+  background-color: white;
+  padding: 24px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+}
+
+.post-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.post-summary {
+  color: #555;
+  line-height: 1.7;
+}
+
+.post-date {
+  color: #888;
   font-size: 14px;
+}
+
+.about, 
+.study-plan,
+.project-goal {
+  background-color: white;
+  padding: 24px;
+  margin-top: 24px;
+  border-radius: 10px;
+}
+
+.study-plan li {
+  margin-bottom: 8px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
 }
