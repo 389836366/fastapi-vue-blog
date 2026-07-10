@@ -8,44 +8,102 @@ body {
 header {
   background-color: #222;
   color: white;
-  text-align: center;
   padding: 40px 20px;
 }
 
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* 博客名称区域 */
+.site-brand {
+  text-align: left;
+}
+
+.site-brand p {
+  margin-top: 0;
+}
+
+/* 导航列表 */
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 导航链接 */
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* 当鼠标移动到导航链接上时 */
+.nav-list a:hover {
+  color: #ffd166;
+}
+
+
+/* 页面主体 */
 main {
   max-width: 800px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
+/* 标题 */
 h1,
 h2,
 h3 {
   margin-top: 0;
 }
 
+/* 文章卡片父容器 */
+.post-list {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* 每一张文章卡片 */
 .post-card {
   background-color: white;
   padding: 24px;
-  margin-bottom: 18px;
   border-radius: 10px;
+
+  flex: 1 1 200px;
 }
 
+/* 文章标题 */
 .post-title {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
+/* 文章简介 */
 .post-summary {
   color: #555;
   line-height: 1.7;
 }
 
+/* 文章日期 */
 .post-date {
   color: #888;
   font-size: 14px;
 }
 
+/* 其他版块 */
 .about, 
 .study-plan,
 .project-goal {
@@ -55,10 +113,12 @@ h3 {
   border-radius: 10px;
 }
 
+/* 学习计划列表 */
 .study-plan li {
   margin-bottom: 8px;
 }
 
+/* 页脚 */
 footer {
   background-color: #222;
   color: white;
