@@ -11,20 +11,11 @@ header {
   padding: 40px 20px;
 }
 
-.header-container {
-  max-width: 800px;
-  margin: 0 auto;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
 
 /* 博客名称区域 */
 .site-brand {
-  text-align: left;
+  text-align: center;
 }
 
 .site-brand p {
@@ -39,6 +30,7 @@ header {
 
   display: flex;
   gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
