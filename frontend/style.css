@@ -93,18 +93,25 @@ h3 {
 .post-title a {
   color: #333;
    text-decoration: none;
+   transition: color 0.3s;
 }
 
 /* 首页文章标签链接的鼠标悬停效果 */
 .post-title a:hover {
   color: #ffd166;
-  transition: color 0.3s;
 }
 
 /* 返回首页链接 */
 .back-link {
-  color: blue;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #555;
   text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #ffd166;
 }
 
 
@@ -133,6 +140,31 @@ h3 {
 /* 学习计划列表 */
 .study-plan li {
   margin-bottom: 8px;
+}
+
+/* 文章详情区域 */
+.article-detail {
+  background-color: white;
+  padding: 32px;
+  border-radius: 10px;
+}
+
+/* 文章详情页主标题 */
+.article-detail h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* 文章正文 */
+.article-detail p {
+  line-height: 1.8;
+}
+
+/* 文章发布时间 */
+.article-meta {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
 /* 页脚 */
