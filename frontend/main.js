@@ -160,7 +160,7 @@ const articleThree = {
     summary: "今天给博客添加导航栏，并学习使用Flex完成页面布局。",
     date: "2026-07-10",
     isPublished: true
-}
+};
 
 articles.push(articleThree);
 
