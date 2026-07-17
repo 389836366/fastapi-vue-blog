@@ -106,3 +106,67 @@ function getArticleMessage(count) {
 
 console.log(getArticleMessage(4));
 console.log(getArticleMessage(1));
+
+// 7月15日：对象和数组
+const articleOne = {
+    title: "我的第一篇博客",
+    summary: "重启项目第一天",
+    date: "2026-07-08",
+    isPublished: true
+};
+
+console.log(articleOne.title);
+console.log(articleOne.summary);
+console.log(articleOne.date);
+console.log(articleOne.isPublished);
+
+console.log("文章标题：" + articleOne.title);
+console.log("文章简介：" + articleOne.summary);
+console.log("发布时间：" + articleOne.date);
+
+const articleTwo = {
+  title: "我为什么要做这个项目",
+  summary: "我想通过这个项目跑通前端、后端、数据库和部署。",
+  date: "2026-07-08",
+  isPublished: true
+};
+
+console.log(articleTwo.title);
+
+const articles = [articleOne, articleTwo];
+
+console.log(articles);
+console.log(articles[0]);
+console.log(articles[1]);
+
+console.log(articles[0].title);
+console.log(articles[1].summary);
+
+console.log(articles.length);
+console.log("当前文章数量：" + articles.length);
+
+function showArticleInfo(article) {
+    console.log("标题：" + article.title);
+    console.log("简介：" + article.summary);
+    console.log("日期：" + article.date);
+}
+
+showArticleInfo(articleOne);
+showArticleInfo(articleTwo);
+
+// 独立练习
+const articleThree = {
+    title: "学习Flex布局",
+    summary: "今天给博客添加导航栏，并学习使用Flex完成页面布局。",
+    date: "2026-07-10",
+    isPublished: true
+}
+
+articles.push(articleThree);
+
+console.log(articleThree.title);
+console.log(articleThree.date);
+console.log(articles.length);
+
+const articleMessage = getArticleMessage(articles.length);
+console.log(articleMessage);
