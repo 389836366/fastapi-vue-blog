@@ -211,3 +211,22 @@ function showPublishedArticles(articleList) {
     }
 }
 showPublishedArticles(articles);
+
+// 7月17日：DOM基础
+const blogTitleElement = document.querySelector("#blog-title");
+console.log(blogTitleElement);
+console.log(blogTitleElement.textContent);
+
+const blogDescriptionElement =document.querySelector("#blog-description");
+console.log(blogDescriptionElement.textContent);
+
+blogDescriptionElement.textContent = "记录我的HTML、CSS和JavaScript学习过程。";
+
+// 独立练习一：读取页脚文字
+const footerTextElement = document.querySelector("footer p");
+console.log(footerTextElement.textContent);
+
+// 独立练习二：读取第一篇文章标题
+const firstArticleLinkElement = document.querySelector(".post-title a");
+console.log(firstArticleLinkElement);
+console.log(firstArticleLinkElement.textContent);
