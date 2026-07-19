@@ -203,9 +203,11 @@ for (const article of articles) {
 console.log("已发布文章数量：" + publishedCount);
 
 // 加分练习
-function showPublishedArticles(article) {
-    for (const article of articles) {
-        console.log(article.title);
+function showPublishedArticles(articleList) {
+    for (const article of articleList) {
+        if (article.isPublished) {
+            console.log(article.title);
+        }
     }
 }
-showPublishedArticles(articleThree);
+showPublishedArticles(articles);
