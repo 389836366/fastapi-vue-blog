@@ -248,3 +248,19 @@ function restoreBlogDescription() {
 }
 
 restoreDescriptionButton.addEventListener("click", restoreBlogDescription);
+
+// 7月19日：使用classList显示和隐藏元素
+const toggleAboutButton = document.querySelector("#toggle-about-button");
+const aboutSection = document.querySelector("#about");
+
+function toggleAboutSection() {
+    aboutSection.classList.toggle("is-hidden");
+
+    if (aboutSection.classList.contains("is-hidden")) {
+        toggleAboutButton.textContent = "显示“关于我";
+    } else {
+        toggleAboutButton.textContent = "隐藏“关于我";
+    }
+}
+
+toggleAboutButton.addEventListener("click", toggleAboutSection);
