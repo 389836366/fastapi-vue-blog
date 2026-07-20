@@ -16,6 +16,18 @@ header {
   padding: 40px 20px;
 }
 
+header button {
+    padding: 10px 16px;
+    margin: 8px 4px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+header button:hover {
+    opacity: 0.8;
+}
 
 
 /* 博客名称区域 */

@@ -230,3 +230,21 @@ console.log(footerTextElement.textContent);
 const firstArticleLinkElement = document.querySelector(".post-title a");
 console.log(firstArticleLinkElement);
 console.log(firstArticleLinkElement.textContent);
+
+// 7月18日：点击事件
+const changeDescriptionButton = document.querySelector("#change-description-button");
+
+function changeBlogDescription() {
+    blogDescriptionElement.textContent = "欢迎来到我的个人博客!";
+}
+
+changeDescriptionButton.addEventListener("click",changeBlogDescription);
+
+// 独立任务
+const restoreDescriptionButton = document.querySelector("#restore-description-button");
+
+function restoreBlogDescription() {
+    blogDescriptionElement.textContent = "记录我的编程学习和成长。";
+}
+
+restoreDescriptionButton.addEventListener("click", restoreBlogDescription);
