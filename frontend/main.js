@@ -258,9 +258,9 @@ function toggleAboutSection() {
     aboutSection.classList.toggle("is-hidden");
 
     if (aboutSection.classList.contains("is-hidden")) {
-        toggleAboutButton.textContent = "显示“关于我";
+        toggleAboutButton.textContent = "显示“关于我”";
     } else {
-        toggleAboutButton.textContent = "隐藏“关于我";
+        toggleAboutButton.textContent = "隐藏“关于我”";
     }
 }
 
@@ -273,7 +273,7 @@ const firstArticleSummaryElement = document.querySelector("#first-article-summar
 
 const firstArticleDateElement = document.querySelector("#first-article-date");
 
-const firstArticleCategoryElement = querySelector("#first-article-category");
+const firstArticleCategoryElement = document.querySelector("#first-article-category");
 
 function renderArticleCard(article) {
     firstArticleTitleElement.textContent =
