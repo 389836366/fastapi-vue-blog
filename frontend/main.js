@@ -112,6 +112,7 @@ const articleOne = {
     title: "我的第一篇博客",
     summary: "重启项目第一天",
     date: "2026-07-08",
+    category: "项目记录",
     isPublished: true
 };
 
@@ -264,3 +265,29 @@ function toggleAboutSection() {
 }
 
 toggleAboutButton.addEventListener("click", toggleAboutSection);
+
+// 7月20日：使用对象数据渲染文章卡片
+const firstArticleTitleElement = document.querySelector("#first-article-title");
+
+const firstArticleSummaryElement = document.querySelector("#first-article-summary");
+
+const firstArticleDateElement = document.querySelector("#first-article-date");
+
+const firstArticleCategoryElement = querySelector("#first-article-category");
+
+function renderArticleCard(article) {
+    firstArticleTitleElement.textContent =
+        article.title;
+
+    firstArticleSummaryElement.textContent =
+        article.summary;
+
+    firstArticleDateElement.textContent =
+        "发布时间：" + article.date;
+
+    firstArticleCategoryElement.textContent =
+        "分类：" + article.category;    
+}
+
+renderArticleCard(articleOne);
+
