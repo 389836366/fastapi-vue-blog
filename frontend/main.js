@@ -70,19 +70,7 @@ function toggleAboutSection() {
 toggleAboutButton.addEventListener("click", toggleAboutSection);
 
 // 7月23日：根据数组动态生成文章卡片
-const articleFour = {
-    title: "测试内容",
-    summary: "单纯做测试",
-    date: "2026-07-23",
-    category: "测试",
-    isPublished: false
-};
-
 const postListElement = document.querySelector("#post-list");
-
-
-
-articles.push(articleFour);
 
 function createArticleCard(article) {
     const articleElement =
