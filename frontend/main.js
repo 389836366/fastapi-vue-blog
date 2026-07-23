@@ -229,11 +229,6 @@ blogDescriptionElement.textContent = "记录我的HTML、CSS和JavaScript学习�
 const footerTextElement = document.querySelector("footer p");
 console.log(footerTextElement.textContent);
 
-// 独立练习二：读取第一篇文章标题
-const firstArticleLinkElement = document.querySelector(".post-title a");
-console.log(firstArticleLinkElement);
-console.log(firstArticleLinkElement.textContent);
-
 // 7月18日：点击事件
 const changeDescriptionButton = document.querySelector("#change-description-button");
 
@@ -268,81 +263,83 @@ function toggleAboutSection() {
 
 toggleAboutButton.addEventListener("click", toggleAboutSection);
 
-// 7月20日：使用对象数据渲染文章卡片
-const firstArticleTitleElement = document.querySelector("#first-article-title");
+// 7月23日：根据数组动态生成文章卡片
+const postListElement = document.querySelector("#post-list");
 
-const firstArticleSummaryElement = document.querySelector("#first-article-summary");
+console.log(postListElement);
 
-const firstArticleDateElement = document.querySelector("#first-article-date");
+function createArticleCard(article) {
+    const articleElement =
+        document.createElement("article");
 
-const firstArticleCategoryElement = document.querySelector("#first-article-category");
+    articleElement.classList.add("post-card");
 
-function renderArticleCard(article) {
-    firstArticleTitleElement.textContent =
-        article.title;
+    const titleElement =
+        document.createElement("h3");
 
-    firstArticleSummaryElement.textContent =
-        article.summary;
+    titleElement.classList.add("post-title");
+    titleElement.textContent = article.title;
 
-    firstArticleDateElement.textContent =
+    const summaryElement =
+        document.createElement("p");
+
+    summaryElement.classList.add("post-summary");
+    summaryElement.textContent = article.summary;
+
+    const dateElement =
+        document.createElement("span");
+
+    dateElement.classList.add("post-date");
+    dateElement.textContent =
         "发布时间：" + article.date;
 
-    firstArticleCategoryElement.textContent =
-        "分类：" + article.category;    
-}
+    const categoryElement =
+        document.createElement("p");
+    
+    categoryElement.classList.add("post-category");
+    categoryElement.textContent =
+        "分类：" + article.category;
 
-renderArticleCard(articles[0]);
+    const statusElement =
+        document.createElement("p");
 
-// 7月21日：切换文章发布状态
-
-const firstArticleStatusElement = document.querySelector("#first-article-status");
-const togglePublishedButton = document.querySelector("#toggle-published-button");
-console.log(firstArticleStatusElement);
-console.log(togglePublishedButton);
-
-function renderArticleStatus(article) {
-    if(article.isPublished) {
-        firstArticleStatusElement.textContent = "状态：已发布";
-        
-        firstArticleStatusElement.classList.add("status-published");
-        firstArticleStatusElement.classList.remove("status-draft");
+    if (article.isPublished) {
+        statusElement.textContent = "状态：已发布";
+        statusElement.classList.add("status-published");
     } else {
-        firstArticleStatusElement.textContent = "状态：草稿";
-
-        firstArticleStatusElement.classList.add("status-draft");
-        firstArticleStatusElement.classList.remove("status-published");
+        statusElement.textContent = "状态：草稿";
+        statusElement.classList.add("status-draft");
     }
-}
-renderArticleStatus(articles[0]);
 
-// 独立练习
-function toggleArticlePublished() {
-    articles[0].isPublished = !articles[0].isPublished;
-    renderArticleStatus(articles[0]);
-}
-togglePublishedButton.addEventListener("click", toggleArticlePublished);
+    articleElement.appendChild(titleElement);
+    articleElement.appendChild(summaryElement);
+    articleElement.appendChild(dateElement);
+    articleElement.appendChild(categoryElement);
+    articleElement.appendChild(statusElement);
 
-// 7.22练习
-const articleCountElement = document.querySelector("#article-count");
+    console.log("正在创建卡片：" + article.title);
 
-function renderArticleCount(articleList) {
-    articleCountElement.textContent = "共" + articleList.length + "篇文章";
-}
-renderArticleCount(articles);
-
-// 独立任务
-// 1
-console.log(articles[1]);
-
-// 2
-for( const article of articles) {
-    console.log(article.date);
+    return articleElement;
 }
 
-// 3
-function logArticleSummaries(articleList) {
+function renderArticleList(articleList) {
+    postListElement.textContent = "";
+
     for (const article of articleList) {
-        console.log(article.summary);
+        const articleCardElement =
+            createArticleCard(article);
+
+        postListElement.appendChild(
+            articleCardElement
+        );
     }
 }
-logArticleSummaries(articles);
+
+renderArticleList(articles);
+
+const firstArticleTitleElement =
+    document.querySelector(".post-title");
+
+console.log(firstArticleTitleElement);
+console.log(firstArticleTitleElement.textContent);
+

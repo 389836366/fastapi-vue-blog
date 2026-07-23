@@ -200,3 +200,8 @@ footer {
     color: #b26a00;
     font-weight: bold;
 }
+
+.post-category {
+    color: #666;
+    font-size: 14px;
+}
