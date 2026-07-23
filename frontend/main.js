@@ -1,5 +1,4 @@
 
-
 // 7月15日：对象和数组
 const articleOne = {
     title: "我的第一篇博客",
@@ -21,11 +20,7 @@ const articleTwo = {
 
 const articles = [articleOne, articleTwo];
 
-function showArticleInfo(article) {
-    console.log("标题：" + article.title);
-    console.log("简介：" + article.summary);
-    console.log("日期：" + article.date);
-}
+
 
 // 独立练习
 const articleThree = {
@@ -38,38 +33,6 @@ const articleThree = {
 
 articles.push(articleThree);
 
-
-
-// 7月16日：循环练习
-for (const article of articles) {
-    console.log(article.title);
-}
-
-for (const article of articles) {
-  console.log("文章标题：" + article.title);
-  console.log("文章简介：" + article.summary);
-  console.log("发布时间：" + article.date);
-  console.log("----------------");
-}
-
-for (const article of articles) {
-    showArticleInfo(article);
-}
-
-for (const article of articles) {
-    if (article.isPublished === true) {
-        console.log("已发布文章: " + article.title);
-    } 
-}
-
-// 独立练习
-let publishedCount = 0;
-for (const article of articles) {
-    if (article.isPublished) {
-        publishedCount = publishedCount + 1;
-    }
-}
-console.log("已发布文章数量：" + publishedCount);
 
 // 7月17日：DOM基础
 const blogTitleElement = document.querySelector("#blog-title");
