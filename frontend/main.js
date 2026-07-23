@@ -291,3 +291,31 @@ function renderArticleCard(article) {
 
 renderArticleCard(articleOne);
 
+// 7月21日：切换文章发布状态
+
+const firstArticleStatusElement = document.querySelector("#first-article-status");
+const togglePublishedButton = document.querySelector("#toggle-published-button");
+console.log(firstArticleStatusElement);
+console.log(togglePublishedButton);
+
+function renderArticleStatus(article) {
+    if(article.isPublished) {
+        firstArticleStatusElement.textContent = "状态：已发布";
+        
+        firstArticleStatusElement.classList.add("status-published");
+        firstArticleStatusElement.classList.remove("status-draft");
+    } else {
+        firstArticleStatusElement.textContent = "状态：草稿";
+
+        firstArticleStatusElement.classList.add("status-draft");
+        firstArticleStatusElement.classList.remove("status-published");
+    }
+}
+renderArticleStatus(articleOne);
+
+// 独立练习
+function toggleArticlePublished() {
+    articleOne.isPublished = !articleOne.isPublished;
+    renderArticleStatus(articleOne);
+}
+togglePublishedButton.addEventListener("click", toggleArticlePublished);

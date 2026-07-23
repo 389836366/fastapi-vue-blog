@@ -190,3 +190,13 @@ footer {
 .is-hidden {
     display: none;
 }
+
+.status-published {
+    color: green;
+    font-weight: bold;
+}
+
+.status-draft {
+    color: #b26a00;
+    font-weight: bold;
+}
