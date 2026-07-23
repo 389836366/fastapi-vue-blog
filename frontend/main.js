@@ -1,3 +1,16 @@
+
+function calculateRemainingDays(target, completed) {
+  return target - completed;
+}
+
+// 独立练习
+function getArticleMessage(count) {
+    if (count >=3) {
+        return "博客已经有多篇文章";
+    } else {
+        return "博客文章还比较少";
+    }
+}
 // 7月15日：对象和数组
 const articleOne = {
     title: "我的第一篇博客",
@@ -8,15 +21,6 @@ const articleOne = {
     url: "article.html"
 };
 
-console.log(articleOne.title);
-console.log(articleOne.summary);
-console.log(articleOne.date);
-console.log(articleOne.isPublished);
-
-console.log("文章标题：" + articleOne.title);
-console.log("文章简介：" + articleOne.summary);
-console.log("发布时间：" + articleOne.date);
-
 const articleTwo = {
     title: "我的HTML学习记录",
     summary: "记录HTML常用标签和页面结构。",
@@ -26,28 +30,13 @@ const articleTwo = {
     url: "article2.html"
 };
 
-console.log(articleTwo.title);
-
 const articles = [articleOne, articleTwo];
-
-console.log(articles);
-console.log(articles[0]);
-console.log(articles[1]);
-
-console.log(articles[0].title);
-console.log(articles[1].summary);
-
-console.log(articles.length);
-console.log("当前文章数量：" + articles.length);
 
 function showArticleInfo(article) {
     console.log("标题：" + article.title);
     console.log("简介：" + article.summary);
     console.log("日期：" + article.date);
 }
-
-// showArticleInfo(articleOne);
-// showArticleInfo(articleTwo);
 
 // 独立练习
 const articleThree = {
@@ -59,10 +48,6 @@ const articleThree = {
 };
 
 articles.push(articleThree);
-
-console.log(articleThree.title);
-console.log(articleThree.date);
-console.log(articles.length);
 
 const articleMessage = getArticleMessage(articles.length);
 console.log(articleMessage);
