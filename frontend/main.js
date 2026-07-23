@@ -113,7 +113,8 @@ const articleOne = {
     summary: "重启项目第一天",
     date: "2026-07-08",
     category: "项目记录",
-    isPublished: true
+    isPublished: true,
+    url: "article.html"
 };
 
 console.log(articleOne.title);
@@ -130,7 +131,8 @@ const articleTwo = {
     summary: "记录HTML常用标签和页面结构。",
     date: "2026-07-10",
     category: "前端学习",
-    isPublished: true
+    isPublished: true,
+    url: "article2.html"
 };
 
 console.log(articleTwo.title);
@@ -268,6 +270,16 @@ const postListElement = document.querySelector("#post-list");
 
 console.log(postListElement);
 
+const articleFour = {
+    title: "测试内容",
+    summary: "单纯做测试",
+    date: "2026-07-23",
+    category: "测试",
+    isPublished: false
+};
+
+articles.push(articleFour);
+
 function createArticleCard(article) {
     const articleElement =
         document.createElement("article");
@@ -278,7 +290,18 @@ function createArticleCard(article) {
         document.createElement("h3");
 
     titleElement.classList.add("post-title");
-    titleElement.textContent = article.title;
+
+    if (article.url) {
+        const linkElement = 
+            document.createElement("a");
+        
+        linkElement.textContent = article.title;
+        linkElement.href = article.url;
+        
+        titleElement.appendChild(linkElement);
+    } else {
+        titleElement.textContent = article.title;
+    }
 
     const summaryElement =
         document.createElement("p");
@@ -343,3 +366,12 @@ const firstArticleTitleElement =
 console.log(firstArticleTitleElement);
 console.log(firstArticleTitleElement.textContent);
 
+// 加练
+const articleContElement = document.querySelector("#article-count");
+
+function renderArticleCount(articleList) {
+    const countElement = document.createElement("p");
+    countElement.textContent = "共" + articleList.length + "篇文章";
+    articleContElement.appendChild(countElement);
+}
+renderArticleCount(articles);
