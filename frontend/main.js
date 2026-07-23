@@ -1,16 +1,5 @@
 
-function calculateRemainingDays(target, completed) {
-  return target - completed;
-}
 
-// 独立练习
-function getArticleMessage(count) {
-    if (count >=3) {
-        return "博客已经有多篇文章";
-    } else {
-        return "博客文章还比较少";
-    }
-}
 // 7月15日：对象和数组
 const articleOne = {
     title: "我的第一篇博客",
@@ -49,8 +38,7 @@ const articleThree = {
 
 articles.push(articleThree);
 
-const articleMessage = getArticleMessage(articles.length);
-console.log(articleMessage);
+
 
 // 7月16日：循环练习
 for (const article of articles) {
