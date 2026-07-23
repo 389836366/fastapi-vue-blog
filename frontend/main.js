@@ -126,10 +126,11 @@ console.log("文章简介：" + articleOne.summary);
 console.log("发布时间：" + articleOne.date);
 
 const articleTwo = {
-  title: "我为什么要做这个项目",
-  summary: "我想通过这个项目跑通前端、后端、数据库和部署。",
-  date: "2026-07-08",
-  isPublished: true
+    title: "我的HTML学习记录",
+    summary: "记录HTML常用标签和页面结构。",
+    date: "2026-07-10",
+    category: "前端学习",
+    isPublished: true
 };
 
 console.log(articleTwo.title);
@@ -157,10 +158,11 @@ function showArticleInfo(article) {
 
 // 独立练习
 const articleThree = {
-    title: "学习Flex布局",
-    summary: "今天给博客添加导航栏，并学习使用Flex完成页面布局。",
-    date: "2026-07-10",
-    isPublished: true
+    title: "我的JavaScript学习记录",
+    summary: "记录JavaScript和DOM基础知识。",
+    date: "2026-07-17",
+    category: "前端学习",
+    isPublished: false
 };
 
 articles.push(articleThree);
@@ -289,7 +291,7 @@ function renderArticleCard(article) {
         "分类：" + article.category;    
 }
 
-renderArticleCard(articleOne);
+renderArticleCard(articles[0]);
 
 // 7月21日：切换文章发布状态
 
@@ -311,11 +313,36 @@ function renderArticleStatus(article) {
         firstArticleStatusElement.classList.remove("status-published");
     }
 }
-renderArticleStatus(articleOne);
+renderArticleStatus(articles[0]);
 
 // 独立练习
 function toggleArticlePublished() {
-    articleOne.isPublished = !articleOne.isPublished;
-    renderArticleStatus(articleOne);
+    articles[0].isPublished = !articles[0].isPublished;
+    renderArticleStatus(articles[0]);
 }
 togglePublishedButton.addEventListener("click", toggleArticlePublished);
+
+// 7.22练习
+const articleCountElement = document.querySelector("#article-count");
+
+function renderArticleCount(articleList) {
+    articleCountElement.textContent = "共" + articleList.length + "篇文章";
+}
+renderArticleCount(articles);
+
+// 独立任务
+// 1
+console.log(articles[1]);
+
+// 2
+for( const article of articles) {
+    console.log(article.date);
+}
+
+// 3
+function logArticleSummaries(articleList) {
+    for (const article of articleList) {
+        console.log(article.summary);
+    }
+}
+logArticleSummaries(articles);
