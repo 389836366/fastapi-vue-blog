@@ -155,6 +155,7 @@ renderArticleList(articles);
 const articleContElement = document.querySelector("#article-count");
 
 function renderArticleCount(articleList) {
+    articleContElement.textContent = "";
     const countElement = document.createElement("p");
     countElement.textContent = "共" + articleList.length + "篇文章";
     articleContElement.appendChild(countElement);
