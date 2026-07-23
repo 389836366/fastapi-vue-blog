@@ -80,7 +80,7 @@ const articleFour = {
 
 const postListElement = document.querySelector("#post-list");
 
-console.log(postListElement);
+
 
 articles.push(articleFour);
 
@@ -143,9 +143,7 @@ function createArticleCard(article) {
     articleElement.appendChild(dateElement);
     articleElement.appendChild(categoryElement);
     articleElement.appendChild(statusElement);
-
-    console.log("正在创建卡片：" + article.title);
-
+    
     return articleElement;
 }
 
@@ -164,11 +162,6 @@ function renderArticleList(articleList) {
 
 renderArticleList(articles);
 
-const firstArticleTitleElement =
-    document.querySelector(".post-title");
-
-console.log(firstArticleTitleElement);
-console.log(firstArticleTitleElement.textContent);
 
 // 加练
 const articleContElement = document.querySelector("#article-count");
