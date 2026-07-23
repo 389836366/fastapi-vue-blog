@@ -207,16 +207,6 @@ for (const article of articles) {
 }
 console.log("已发布文章数量：" + publishedCount);
 
-// 加分练习
-function showPublishedArticles(articleList) {
-    for (const article of articleList) {
-        if (article.isPublished) {
-            console.log(article.title);
-        }
-    }
-}
-showPublishedArticles(articles);
-
 // 7月17日：DOM基础
 const blogTitleElement = document.querySelector("#blog-title");
 console.log(blogTitleElement);
@@ -266,10 +256,6 @@ function toggleAboutSection() {
 toggleAboutButton.addEventListener("click", toggleAboutSection);
 
 // 7月23日：根据数组动态生成文章卡片
-const postListElement = document.querySelector("#post-list");
-
-console.log(postListElement);
-
 const articleFour = {
     title: "测试内容",
     summary: "单纯做测试",
@@ -277,6 +263,10 @@ const articleFour = {
     category: "测试",
     isPublished: false
 };
+
+const postListElement = document.querySelector("#post-list");
+
+console.log(postListElement);
 
 articles.push(articleFour);
 
@@ -375,3 +365,73 @@ function renderArticleCount(articleList) {
     articleContElement.appendChild(countElement);
 }
 renderArticleCount(articles);
+
+// 7.24
+const showAllButton =
+    document.querySelector("#show-all-button");
+
+const showPublishedButton =
+    document.querySelector("#show-published-button");
+
+const showDraftButton =
+    document.querySelector("#show-draft-button");
+
+function getPublishedArticles(articleList) {
+    const publishedArticles = [];
+
+    for (const article of articleList) {
+        if (article.isPublished) {
+            publishedArticles.push(article);
+        }
+    }
+
+    return publishedArticles;
+}
+
+function getDraftArticles(articleList) {
+    const draftArticles = [];
+
+    for (const article of articleList) {
+        if (!article.isPublished) {
+            draftArticles.push(article);
+        }
+    }
+
+    return draftArticles;
+}
+
+function showAllArticles() {
+    renderArticleList(articles);
+    renderArticleCount(articles);
+}
+
+function showPublishedArticles() {
+    const publishedArticles =
+        getPublishedArticles(articles);
+
+    renderArticleList(publishedArticles);
+    renderArticleCount(publishedArticles);
+}
+
+function showDraftArticles() {
+    const draftArticles = 
+        getDraftArticles(articles);
+    
+    renderArticleList(draftArticles);
+    renderArticleCount(draftArticles);    
+}
+
+showAllButton.addEventListener(
+    "click",
+    showAllArticles
+);
+
+showPublishedButton.addEventListener(
+    "click",
+    showPublishedArticles
+);
+
+showDraftButton.addEventListener(
+    "click",
+    showDraftArticles
+);
