@@ -1,4 +1,3 @@
-
 // 7月15日：对象和数组
 const articleOne = {
     title: "我的第一篇博客",
@@ -20,8 +19,6 @@ const articleTwo = {
 
 const articles = [articleOne, articleTwo];
 
-
-
 // 独立练习
 const articleThree = {
     title: "我的JavaScript学习记录",
@@ -35,18 +32,8 @@ articles.push(articleThree);
 
 
 // 7月17日：DOM基础
-const blogTitleElement = document.querySelector("#blog-title");
-console.log(blogTitleElement);
-console.log(blogTitleElement.textContent);
 
 const blogDescriptionElement =document.querySelector("#blog-description");
-console.log(blogDescriptionElement.textContent);
-
-blogDescriptionElement.textContent = "记录我的HTML、CSS和JavaScript学习过程。";
-
-// 独立练习一：读取页脚文字
-const footerTextElement = document.querySelector("footer p");
-console.log(footerTextElement.textContent);
 
 // 7月18日：点击事件
 const changeDescriptionButton = document.querySelector("#change-description-button");
